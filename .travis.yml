@@ -12,8 +12,8 @@ deploy:
   provider: s3
   access_key_id: $AWS_KEY
   secret_access_key: $AWS_SECRET
-  bucket: "wonderful-app-nkj"
-  region: "us-east-2"
+  bucket: wonderful-app-nkj
+  region: us-east-2
   acl: public_read
   skip_cleanup: true
   local_dir: build
