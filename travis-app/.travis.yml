@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - node
+cache:
+  yarn: true
+  directories:
+    - node_modules
+script:
+  - yarn build
+  - ls build
+deploy:
+  provider: s3
+  access_key_id: $AWS_KEY
+  secret_access_key: $AWS_SECRET
+  bucket: "wonderful-app-nkj"
+  region: "us-east-2"
+  acl: public_read
+  skip_cleanup: true
+  local_dir: build
+branches:
+  only:
+    - master
